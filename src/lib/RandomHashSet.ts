@@ -65,6 +65,14 @@ class RandomHashSet<T> {
         this.set.remove(object);
         this.data = this.data.filter(x => x != object);
     }
+
+    sort = (compareFn: (a: T, b: T) => number) => {
+        this.data.sort(compareFn);
+        this.set.clear();
+        for (let i = 0; i < this.data.length; i++) {
+            this.set.add(this.data[i]);
+        }
+    }
 }
 
 export default RandomHashSet;

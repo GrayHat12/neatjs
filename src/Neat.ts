@@ -24,9 +24,10 @@ class Neat {
     private _max_clients: number = 0;
     private _output_size: number = 0;
 
-    private _c1 = 1;
-    private _c2 = 1;
-    private _c3 = 1;
+    private _c1: number = 1;
+    private _c2: number = 1;
+    private _c3: number = 1;
+    private _cp: number = 4;
 
 
     constructor(input_size: number, output_size: number, clients: number, mode: LOG_MODE = "NORMAL") {
@@ -146,6 +147,14 @@ class Neat {
 
     public get PROBABILITY_MUTATE_TOGGLE_LINK(): number {
         return this._PROBABILITY_MUTATE_TOGGLE_LINK;
+    }
+
+    public get CP(): number {
+        return this._cp;
+    }
+
+    public set CP(v: number) {
+        this._cp = v;
     }
 }
 

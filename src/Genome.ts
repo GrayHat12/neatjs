@@ -11,19 +11,8 @@ class Genome {
 
     private _neat: Neat;
 
-    private _calculator: Calculator | null = null;
-
     constructor(neat: Neat) {
         this._neat = neat;
-    }
-
-    private _generate_calculator = () => {
-        return this._calculator = new Calculator(this);
-    }
-
-    calculate = (...data: number[]) => {
-        if (this._calculator === null) this._calculator = this._generate_calculator();
-        return this._calculator.calculate(...data);
     }
 
     distance = (g2: Genome) => {
